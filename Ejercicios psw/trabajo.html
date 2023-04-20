@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Horas trabajadas</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let horas
+    sueldo_base = parseFloat (document.formulario1.sueldo_base.value);
+    horas = parseFloat (document.formulario1.horas.value);
+    if(horas>=0)
+    {
+        if(horas>40 && horas<=48)
+        {
+            pago=(horas-40)*(sueldo_base*2)+sueldo_base*40
+        }
+        else if(horas<=40)
+        {
+            pago=sueldo_base*horas
+        }
+        else if(horas>48)
+        {
+            aux=horas-48
+            pago=(sueldo_base*2*8)+(aux*sueldo_base*3)+(40  *sueldo_base)
+        }
+    }
+    else
+        pago="no puedes trabajar horas negativas :c"
+    document.formulario1.pago.value = pago;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="sueldo_base">Sueldo por hora:</label>
+                        </td>
+                        <td>
+                            $<input name="sueldo_base" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="horas">Horas trabajadas:</label>
+                        </td>
+                        <td>
+                            <input name="horas" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="pago">Valor de pago:</label>
+                        </td>
+                        <td>
+                            $<input name="pago" step="0.000001" disabled/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="index.html">Volver</a>
+        </form>
+    </body>
+</html>

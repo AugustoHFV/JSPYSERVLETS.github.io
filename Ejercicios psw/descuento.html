@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Descuento del 15%</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script>
+ 
+function algoritmo()
+{
+    let Precio_final, Precio_inicial;
+    Precio_inicial = parseFloat (document.formulario1.Precio_inicial.value);
+    Precio_final=Precio_inicial*0.85;
+    document.formulario1.Precio_final.value = Precio_final;
+}
+ 
+        </script>
+    </head>
+    <body>
+        <form name="formulario1">
+            <table style="text-align: left; margin-left: auto; margin-right: auto;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="Precio_inicial">Ingresa el precio inicial:</label>
+                        </td>
+                        <td>
+                            <input name="Precio_inicial" required="required" step="0.000001" type="number" />
+                        </td>
+                    </tr>
+                    <tr align="center">
+                        <td colspan="2" rowspan="1">
+                            <input value="Procesar" type="button" onclick="algoritmo();" />
+                            <input type="reset" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Precio_final">Valor de Precio final:</label>
+                        </td>
+                        <td>
+                            <input name="Precio_final" step="0.000001" type="number" disabled/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="index.html">Volver</a>
+        </form>
+    </body>
+</html>

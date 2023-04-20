@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promedio</title>
+
+    <script>
+        function algoritmo()
+        {
+            let parcial;
+            let promedio, examen, calif1, calif2, calif3, trabajo;
+            calif1 = parseFloat (document.formulario1.calif1.value);
+            calif2 = parseFloat (document.formulario1.calif2.value);
+            calif3 = parseFloat (document.formulario1.calif3.value);
+            trabajo = parseFloat (document.formulario1.trabajo.value);
+            examen = parseFloat (document.formulario1.examen.value);
+            parcial=((calif1+calif2+calif3)/3)*0.55
+            promedio=parcial+(examen*0.3)+(trabajo*0.15)
+            if(calif1>100 || calif1<0 || calif2>100 || calif2<0 || calif3>100 || calif3<0 || examen>100 || examen<0 || trabajo>100 || trabajo<0)
+            {
+                promedio="ingrese bien sus calificaciones"
+                document.formulario1.promedio.value = promedio;
+            }
+            else
+                document.formulario1.promedio.value = promedio;
+                
+        }       
+    </script>
+
+</head>
+
+<body>
+    <form name="formulario1">
+        <table style="text-align: left; margin-left: auto; margin-right: auto;">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="calif1">Ingrese su 1ra calificacion</label>
+                    </td>
+                    <td>
+                        <input name="calif1" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="calif2">Ingrese su 2da calificacion</label>
+                    </td>
+                    <td>
+                        <input name="calif2" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="calif3">Ingresa e su 3ra calificacion</label>
+                    </td>
+                    <td>
+                        <input name="calif3" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="examen">Ingrese la calificacion del examen final</label>
+                    </td>
+                    <td>
+                        <input name="examen" required="required" step="0.000001" type="number" />
+                    </td>
+                    <tr>
+                    <td>
+                        <label for="trabajo">Ingrese la calificacion de su trabajo</label>
+                    </td>
+                    <td>
+                        <input name="trabajo" required="required" step="0.000001" type="number" />
+                    </td>
+                </tr>
+                </tr>
+                <tr align="center">
+                    <td colspan="2" rowspan="1">
+                        <input value="Procesar" type="button" onclick="algoritmo();" />
+                        <input type="reset" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="promedio">Su calificacion final es:</label>
+                    </td>
+                    <td>
+                        <input name="promedio" step="0.000001" disabled/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="index.html">Volver</a>
+    </form>
+</body>
+</html>
